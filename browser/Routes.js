@@ -2,7 +2,9 @@
 
 // NODE LIBRARIES
 import React, { Component } from 'react';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+console.log('history:', browserHistory);
+console.log('index:', IndexRoute);
 
 // IMPORTED FILES
 import HomeContainer from './components/home/HomeContainer';
@@ -18,7 +20,7 @@ export default class Routes extends Component {
 
   render() {
     return (
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
         <Route path="/">
           <Route path="home" component={HomeContainer} onEnter={onHomeEnter} />
           <IndexRoute component={HomeContainer} onEnter={onHomeEnter} />
